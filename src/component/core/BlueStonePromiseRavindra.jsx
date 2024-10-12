@@ -2,11 +2,10 @@ import React from 'react';
 
 const BlueStonePromise = () => {
   return (
-    <div className="flex justify-center items-center py-10 bg-pink-50">
+    <div className="flex justify-center items-center py-10 bg-pink-100 mt-20">
       <div className="p-6 md:flex md:items-center md:justify-between rounded-lg shadow-lg">
         {/* Left Image Section */}
-        <div className="md:w-1/2 md:pr-6 flex justify-center">
-          {/* Replace src with the actual image URL */}
+        <div className="md:w-1/2 flex justify-center">
           <img 
             src="https://kinclimg5.bluestone.com/f_webp/static/hp/d/bs-p.png" 
             alt="BlueStone Promise" 
@@ -14,8 +13,8 @@ const BlueStonePromise = () => {
           />
         </div>
 
-        {/* Right Icon Grid Section */}
-        <div className="md:w-1/2 grid grid-cols-3 gap-2">
+        {/* Right Icon Grid Section with Border Touching Left Section */}
+        <div className="md:w-1/2 grid grid-cols-3 gap-2 border-2 border-gray-300 p-4 rounded-lg">
           {/* First Image */}
           <div className="flex flex-col items-center">
             <img 
@@ -95,6 +94,8 @@ const BlueStonePromise = () => {
             />
             <p className="text-sm mt-2 text-center text-gray-600">Curated Comfort With Try at Home</p>
           </div>
+
+          {/* Ninth Image */}
           <div className="flex flex-col items-center">
             <img 
               src="https://kinclimg5.bluestone.com/f_webp/static/hp/d/bp-9.png" 

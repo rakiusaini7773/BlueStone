@@ -7,6 +7,9 @@ import SliderComponent from "./component/core/SliderComponentRavindra";
 import VideoSection from "./component/core/VideoSectionRavindra";
 import EditorialGrid from "./component/core/EditorialGrid"
 import BlueStonePromise from "./component/core/BlueStonePromiseRavindra";
+import NewsCardsComponent from "./component/core/NewsCardsComponentRavindra";
+import Footer from "./component/common/footerRavindra";
+import JewelrySearches from "./component/common/JewelrySearchesRavindra";
 
 export default function App() {
   return (
@@ -20,6 +23,9 @@ export default function App() {
 <VideoSection/>
 <EditorialGrid/>
 <BlueStonePromise/>
+<NewsCardsComponent/>
+<Footer/>
+<JewelrySearches/>
   </>
   )
 }
