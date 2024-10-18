@@ -1,15 +1,12 @@
-import React from 'react'
-import Home from './page/home'
-import MonthlyPlanRavindra from './page/MonthlyPlanRavindra'
-import GoldRavindra from './page/GoldRavindra'
+import React from 'react';
+import AppRouter from './Router/AppRouter';
 
-
-export default function App() {
+const App = () => {
   return (
-  <div>
-   {/* <Home/> */}
-   {/* <MonthlyPlanRavindra/> */}
-   <GoldRavindra/>
-  </div>
-  )
-}
+    <div>
+      <AppRouter />
+    </div>
+  );
+};
+
+export default App;

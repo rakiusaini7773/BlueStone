@@ -15,6 +15,7 @@ import JewelrySearches from "../component/common/JewelrySearchesRavindra";
 const Home = () => {
   return (
     <div>
+     
       <JewelryGrid/>
 <Banner/>
 <SliderComponent/>
