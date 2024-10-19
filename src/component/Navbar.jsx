@@ -1,8 +1,10 @@
-import React, { useContext , useState } from 'react';
+import React, { useContext, useState } from 'react';
 import navItems from "../Data/navItems";
 import { Link } from "react-router-dom";
 import { FaAngleDown, FaBars, FaTimes } from "react-icons/fa";
 import { CartContext } from "../context/CartContext"; // Import the Cart context
+import logo from "../assets/AVERI (1).png";
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openSubMenus, setOpenSubMenus] = useState({});
@@ -19,17 +21,19 @@ const Navbar = () => {
       [index]: !prevState[index],
     }));
   };
-  const { cartItems } = useContext(CartContext); 
-  const cartItemCount = cartItems.length; 
+
+  const { cartItems } = useContext(CartContext);
+  const cartItemCount = cartItems.length;
 
   return (
     <nav className="bg-white shadow-md">
       {/* Desktop View */}
-
       <div className="hidden lg:block">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <div className="flex items-center space-x-3">
-            <img src="/logo.svg" alt="Bluestone Logo" className="h-8" />
+            <Link to="/" className="flex items-center">
+              <img src={logo} alt="Bluestone Logo" className="w-20 h-20 rounded-full object-cover" />
+            </Link>
           </div>
 
           <div className="flex-1 px-4">
@@ -62,22 +66,23 @@ const Navbar = () => {
             <Link to="" className="hover:text-blue-600">
               Try at Home
             </Link>
-            <a href="#" className="hover:text-blue-600">
-              Video Call
-            </a>
+            <Link to="/term-and-condtiton" className="hover:text-blue-600">
+              term-and-condition
+            </Link>
+
             <Link to="/cart" className="relative">
-            Cart
-            <span className="ml-2 bg-red-500 rounded-full px-2 text-sm">
-              {cartItems.length} {/* Shows number of items in the cart */}
-            </span>
-          </Link>
-            
-            <a href="#" className="hover:text-blue-600">
-              Login
-            </a>
-            <a href="#" className="hover:text-blue-600">
+              Cart
+              <span className="ml-2 bg-red-500 rounded-full px-2 text-sm">
+                {cartItems.length} {/* Shows number of items in the cart */}
+              </span>
+            </Link>
+
+            <Link to="/policy" className="hover:text-blue-600">
+              policy
+            </Link>
+            {/* <a href="#" className="hover:text-blue-600">
               Signup
-            </a>
+            </a> */}
           </div>
         </div>
 
@@ -124,6 +129,7 @@ const Navbar = () => {
                             )}
                           </li>
                         ))}
+
                       </ul>
                     )}
                   </li>
@@ -138,7 +144,9 @@ const Navbar = () => {
       <div className="block lg:hidden">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <div className="flex items-center space-x-3">
-            <img src="/logo.svg" alt="Bluestone Logo" className="h-8" />
+            <Link to="/" className="flex items-center">
+              <img src={logo} alt="Bluestone Logo" className="w-20 h-20 rounded-full object-cover" />
+            </Link>
           </div>
 
           <div className="flex-1 px-4">

@@ -61,3 +61,20 @@
 .animate-slide-up-cube-alternate {
   animation: slide-up-cube-alternate 1.3s cubic-bezier(0.32, 1.22, 0.37, 1.66) forwards;
 }
+body {
+  background-color: #f9fafb; /* Light gray background */
+  font-family: 'Arial', sans-serif; /* Custom font family */
+  color: #374151; /* Dark text color */
+}
+
+h1 {
+  color: #111827; /* Darker color for headings */
+}
+
+ol {
+  padding-left: 1.5rem; /* Indent ordered list */
+}
+
+strong {
+  color: #2563eb; /* Blue color for strong text */
+}
