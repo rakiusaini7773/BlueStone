@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import { FaTrash } from "react-icons/fa"; // Import the trash icon
 
 const CartRavindra = ({ setIsCartOpen }) => {
-  const { cartItems } = useContext(CartContext); // Access cart items from context
+  const { cartItems, removeFromCart } = useContext(CartContext); // Access cart items and remove function from context
 
   // Calculate total price
   const totalPrice = cartItems.reduce((acc, item) => acc + item.price, 0);
@@ -35,6 +36,14 @@ const CartRavindra = ({ setIsCartOpen }) => {
                     </div>
                   </div>
                   <span className="text-lg font-medium">{item.price}</span>
+                  {/* Delete Button with Icon */}
+                  <button
+                    onClick={() => removeFromCart(item)} // Call the remove function
+                    className="text-red-600 hover:text-red-800 ml-4"
+                    aria-label="Remove item from cart" // Accessibility feature
+                  >
+                    <FaTrash className="w-6 h-6" /> {/* Render the trash icon */}
+                  </button>
                 </div>
               ))}
             </div>
