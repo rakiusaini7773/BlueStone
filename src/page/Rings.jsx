@@ -58,9 +58,15 @@ const Rings = () => {
   );
 };
 
-// Updated ProductCard component to handle clicks
+// Updated ProductCard component to handle coupon code
 const ProductCard = ({ product, handleAddToCart, handleProductClick }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const couponCode = "DISCOUNT5"; // Define the coupon code
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(couponCode); // Copy the coupon code to clipboard
+    alert("Coupon code copied: " + couponCode); // Notify the user
+  };
 
   return (
     <div
@@ -102,6 +108,13 @@ const ProductCard = ({ product, handleAddToCart, handleProductClick }) => {
       >
         Add to Cart
       </button>
+
+      {/* Coupon Code Section in ProductCard */}
+      <div className="mt-4 p-2 bg-gray-100 rounded-md text-center">
+        <p className="text-sm">Use coupon code for 5% off:</p>
+        <span className="font-bold">{couponCode}</span>
+
+      </div>
     </div>
   );
 };
