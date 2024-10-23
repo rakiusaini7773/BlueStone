@@ -8,6 +8,12 @@ import CartRavindra from "../page/CartRavindra"
 import TermsCondtitonRavindra from '../page/TermsCondtitonRavindra';
 import PolicyRavindra from '../page/PolicyRavindra';
 import MonthlyPlanRavindra from "../page/MonthlyPlanRavindra"
+import NecklacesRavindra from '../page/NecklacesRavindra';
+import PendantsRavindra from '../page/PendantsRavindra';
+import BradiltsRavindra from '../page/bradiltsRavindra';
+import BanglesRavindra from '../page/BanglesRavindra';
+import EarningRavindra from '../page/EarningRavindra';
+import CoinsRavindra from '../page/CoinsRavindra';
 const AppRouter = () => {
   return (
   <div>
@@ -19,6 +25,13 @@ const AppRouter = () => {
         <Route path="/term-and-condtiton" element={<TermsCondtitonRavindra />} />
       <Route path="/policy" element={<PolicyRavindra/>}/>
       <Route path="/monthlyPlan" element={<MonthlyPlanRavindra/>}/>
+      <Route path='/necklaces' element={<NecklacesRavindra/>}/>
+      <Route path='/pendants' element={<PendantsRavindra/>}/>
+      <Route path='/bradilts' element={<BradiltsRavindra/>}/>
+      <Route path='/bangles' element={<BanglesRavindra/>}/>
+      <Route path='/earning' element={<EarningRavindra/>}/>
+      <Route path='/coins' element={<CoinsRavindra/>}/>
+      <Route path='/bracelet' element={<BradiltsRavindra/>}/>
       </Routes>
       </div>
   );

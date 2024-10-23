@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
-import { CartContext } from "../context/CartContext";
-import products from "../Data/products";
-import ProductDetail from "../component/core/ProductDetailRavindra"; // Import the ProductDetail component
+import React, { useContext, useState } from 'react';
+import { CartContext } from "../context/CartContext"; // Importing CartContext
+import pendantsProduct from "../Data/braceletProduct"; // Importing pendants data
+import ProductDetail from "../component/core/ProductDetailRavindra"; // Reusing ProductDetail component
 
-const Rings = () => {
+const BradiltsRavindra = () => {
   const { addToCart } = useContext(CartContext); // Access addToCart from CartContext
   const [selectedProduct, setSelectedProduct] = useState(null); // Manage the selected product
 
@@ -21,6 +21,11 @@ const Rings = () => {
 
   return (
     <div>
+      <img 
+        src="https://www.giva.co/cdn/shop/files/Collection_Banner_Web-min_1.jpg?v=1728452555&width=1780" 
+        alt="" 
+        className="w-full h-72 object-cover"
+      />
       {selectedProduct ? (
         <div>
           <button 
@@ -30,27 +35,20 @@ const Rings = () => {
             Back to Products
           </button>
           {/* Render the detailed product view */}
-          <ProductDetail productId={selectedProduct.id} productList={products} />
+          <ProductDetail productId={selectedProduct.id} productList={pendantsProduct} />
         </div>
       ) : (
         <div>
-          <img
-            src="https://www.giva.co/cdn/shop/files/Rings_-_Collection_Banner_Web_1_-min.jpg?v=1728452222&width=1780"
-            alt="Rings Collection Banner"
-            className="mt-4 w-full object-cover"
-          />
-          <div className="p-6">
-            <h1 className="text-2xl font-bold mb-4">Products</h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {products.map((product) => (
-                <ProductCard
-                  key={product.id}
-                  product={product}
-                  handleAddToCart={handleAddToCart}
-                  handleProductClick={handleProductClick}
-                />
-              ))}
-            </div>
+          <h1 className="text-2xl font-bold mb-4">Bradilts Collection</h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {pendantsProduct.map((product) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                handleAddToCart={handleAddToCart}
+                handleProductClick={handleProductClick}
+              />
+            ))}
           </div>
         </div>
       )}
@@ -58,10 +56,10 @@ const Rings = () => {
   );
 };
 
-// Updated ProductCard component to handle coupon code
+// ProductCard component to display individual pendants
 const ProductCard = ({ product, handleAddToCart, handleProductClick }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const couponCode = "DISCOUNT5"; // Define the coupon code
+  const couponCode = "PENDANT5"; // Coupon code for pendants
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(couponCode); // Copy the coupon code to clipboard
@@ -109,14 +107,19 @@ const ProductCard = ({ product, handleAddToCart, handleProductClick }) => {
         Add to Cart
       </button>
 
-      {/* Coupon Code Section in ProductCard */}
+      {/* Coupon Code Section in ProductCard */} 
       <div className="mt-4 p-2 bg-gray-100 rounded-md text-center">
         <p className="text-sm">Use coupon code for 5% off:</p>
         <span className="font-bold">{couponCode}</span>
-
+        <button
+          onClick={copyToClipboard}
+          className="text-sm text-blue-500 underline ml-2"
+        >
+          Copy
+        </button>
       </div>
     </div>
   );
 };
 
-export default Rings;
+export default BradiltsRavindra;

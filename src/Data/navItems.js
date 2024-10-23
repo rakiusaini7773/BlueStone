@@ -8,22 +8,28 @@ const navItems = [
       path:"/rings",
     },
     {
-      title: "Necklaces" 
+      title: "Necklaces",
+      path:"/necklaces", 
     },
     {
-      title: "PENDANTS"
+      title: "PENDANTS",
+      path:"/pendants",
     },
     {
-      title: "Bradilts"
+      title: "Bracelet",
+      path:"/bracelet",
     },
     {
       title: "Bangles",
+      path:"/bangles",
     },
     {
-      title: "Earning"
+      title: "Earning",
+      path:"/earning",
     },
     {
       title: "Coins",
+      path:"/coins",
     },
    
   ];
